@@ -30,37 +30,39 @@ class Timer extends Component {
 
     handleStop = () => {
         clearInterval(this.interval); // stop the ticking!	    clearInterval(this.interval); // stop the ticking!
-        this.setState({ startTime: null });
+        this.setState({ startTime: null, elapsed: 0 });
     }
 
-render() {
+    render() {
 
-    let startTime;
-    if (this.state.startTime) {
-        startTime = this.state.startTime.toLocaleTimeString();
-    } else {
-        startTime = "Stopped";
+        let startTime;
+        if (this.state.startTime) {
+            startTime = this.state.startTime.toLocaleTimeString();
+        } else {
+            startTime = "Stopped";
+        }
+
+
+
+        return (
+            <div className="Timer">
+
+                <p><b>Start Time</b> </p>
+                <p><i>{startTime} </i></p>
+                <p><b>Elapsed Time</b></p>
+                <i> {this.state.elapsed}s</i>
+                <p>
+                    {this.state.startTime === null ?
+                        <button onClick={this.handleStart}>START</button> :
+                        <button onClick={this.handleStop}>STOP</button>
+                    }
+                </p>
+
+
+            </div>
+        )
+
     }
-
-
-
-    return (
-        <div className="Timer">
-
-            <p><b>Start Time</b> </p>
-            <p><i>{startTime} </i></p>
-            <p><b>Elapsed Time</b></p>
-            <i> {this.state.elapsed}s</i>
-            <p>
-                <button onClick={this.handleStart}>START</button>
-                <button onClick={this.handleStop}>STOP</button>
-            </p>
-
-
-        </div>
-    )
-
-}
 
 }
 export default Timer; 

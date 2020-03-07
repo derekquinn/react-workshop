@@ -12,11 +12,7 @@ class Counter extends Component {
         console.log("Counter Reset")
     }
     handleCount = (diff)=> {
-        if(diff = -1){
-            console.log("Counter decrease")
-        } else{
-            console.log("Counter increase")
-        }
+
         this.setState(prev => {
             return {count: prev.count + diff}
         })
@@ -33,7 +29,8 @@ class Counter extends Component {
                 <p>{this.state.count}</p>
                 <div>
                     <button onClick={()=> this.handleCount(-1)}> Down</button>
-                    <button onClick={this.handleReset}>Reset</button>
+                    {this.state.count !== 0 && 
+                    <button onClick={this.handleReset}>Reset</button> }
                     <button onClick={()=> this.handleCount(1)}>Up</button>
                 </div>
             </div>
