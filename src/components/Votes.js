@@ -8,10 +8,15 @@ class Votes extends Component {
 
         chocolate: 0,
         vanilla: 0,
-        strawberry: 0
+        strawberry: 0,
+
 
     }
+
     handleVote = (vote) => {
+
+
+
         if (vote === "chocolate") {
 
             this.setState(prev => {
@@ -20,21 +25,25 @@ class Votes extends Component {
             })
             console.log("Chocolate vote")
         } else if (vote === "vanilla") {
-           
+
             this.setState(prev => {
                 return { vanilla: prev.vanilla + 1 }
 
             })
             console.log("Vanilla Vote")
 
-        } else
-
+        } else {
             this.setState(prev => {
                 return { strawberry: prev.strawberry + 1 }
 
             })
-        console.log("Strawberry Vote")
+            console.log("Strawberry Vote")
+        }
 
+
+
+        
+       
     }
 
 
@@ -43,18 +52,32 @@ class Votes extends Component {
     render() {
 
 
+
+        let total = this.state.chocolate + this.state.strawberry + this.state.vanilla; 
+        if(total === 0 ){
+            total = 1
+        }
+        let percentChocolate = (this.state.chocolate / total) * 100;
+        let percentVanilla = (this.state.vanilla / total) * 100;
+        let percentStrawberry = (this.state.strawberry / total) * 100;
+
+    
+
         return (
             <div className="Votes">
-                <p>Chocolate</p>
+                <p><b>Chocolate</b></p>
                 <p>{this.state.chocolate}</p>
-                <p>Vanilla</p>
+                <p>{percentChocolate}%</p>
+                <p><b>Vanilla</b></p>
                 <p>{this.state.vanilla}</p>
-                <p>Strawberry:</p>
+                <p>{percentVanilla}%</p>
+                <p><b>Strawberry:</b></p>
                 <p>{this.state.strawberry}</p>
+                <p>{percentStrawberry}%</p>
                 <button onClick={() => this.handleVote("chocolate")}>Chocolate</button>
                 <button onClick={() => this.handleVote("vanilla")}>Vanilla</button>
                 <button onClick={() => this.handleVote("strawberry")}>Strawberry</button>
-
+                <p>Total Vote = {total}</p>
             </div>
 
         )
