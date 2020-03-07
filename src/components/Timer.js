@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Timer.css';
+import stopwatch from '../images/stopwatch.png';
 
 class Timer extends Component {
 
@@ -46,7 +47,8 @@ class Timer extends Component {
 
         return (
             <div className="Timer">
-
+                <img src={stopwatch} width="20%" alt="stopwatch_image"></img>
+               
                 <p><b>Start Time</b> </p>
                 <p><i>{startTime} </i></p>
                 <p><b>Elapsed Time</b></p>

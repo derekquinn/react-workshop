@@ -23,7 +23,7 @@ class Counter extends Component {
     render() {
         let additionClass = ""
         if (this.state.count < 0) {
-            additionClass = " negative"
+            additionClass = " negative" 
         }
         return (
             <div className={"Counter" + additionClass}>

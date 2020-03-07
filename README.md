@@ -1,6 +1,7 @@
-## This project was created for a React Workshop, covering the following topics: 
+## Project created for a React Workshop, covering:
 ### • JSX
 ### • Handling State 
 ### • Props
 ### • Immutability 
 ### • ES6 
+### • Accessiblity 
