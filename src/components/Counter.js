@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Counter.css';
 
 class Counter extends Component {
 
@@ -6,10 +7,12 @@ class Counter extends Component {
 
         return (
             <div className="Counter">
-                <p><h3>0</h3></p>
-                <div><button>Down</button>
-                <button>Reset</button>
-                <button>Up</button></div>
+                <p>0</p>
+                <div>
+                    <button>Down</button>
+                    <button>Reset</button>
+                    <button>Up</button>
+                </div>
             </div>
         )
     }
