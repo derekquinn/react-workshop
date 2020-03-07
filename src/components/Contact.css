@@ -1,0 +1,9 @@
+.Contact {
+    border: 2px solid firebrick;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .Contact label {
+    font-weight: bold;
+  } 
