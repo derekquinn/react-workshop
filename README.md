@@ -2,4 +2,5 @@
 ### • JSX
 ### • Handling State 
 ### • Props
-### • s
+### • Immutability 
+### • ES6 
